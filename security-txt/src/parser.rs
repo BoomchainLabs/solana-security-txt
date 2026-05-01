@@ -9,7 +9,7 @@ use core::{
 };
 use hashbrown::HashMap;
 use thiserror::Error;
-use twoway::find_bytes;
+use memchr::memmem::find as find_bytes;
 
 pub enum Contact {
     Email(String),
