@@ -7,7 +7,7 @@ use core::{
     fmt::{self, Display},
     str::from_utf8,
 };
-use hashbrown::HashMap;
+use alloc::collections::BTreeMap;
 use thiserror::Error;
 use memchr::memmem::find as find_bytes;
 
@@ -162,7 +162,7 @@ pub fn parse(mut data: &[u8]) -> Result<SecurityTxt, SecurityTxtError> {
 
     data = &data[SECURITY_TXT_BEGIN.len()..end];
 
-    let mut attributes = HashMap::<String, String>::default();
+    let mut attributes = BTreeMap::<String, String>::new();
     let mut field: Option<String> = None;
     for part in data.split(|&b| b == 0) {
         if let Some(ref f) = field {

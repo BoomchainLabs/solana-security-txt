@@ -12,6 +12,5 @@ license = "MIT OR Apache-2.0"
 parser = ["thiserror", "memchr"]
 
 [dependencies]
-hashbrown = "0"
 thiserror = { version = "2", optional = true }
 memchr = { version = "2", optional = true }
