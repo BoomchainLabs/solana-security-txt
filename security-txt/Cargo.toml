@@ -12,5 +12,6 @@ license = "MIT OR Apache-2.0"
 parser = ["thiserror", "memchr"]
 
 [dependencies]
-thiserror = { version = "2", optional = true }
-memchr = { version = "2", optional = true }
+# no default features to allow no_std
+thiserror = { version = "2", optional = true, default-features = false }
+memchr = { version = "2", optional = true, default-features = false }

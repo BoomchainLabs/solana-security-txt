@@ -1,5 +1,6 @@
 use crate::{SECURITY_TXT_BEGIN, SECURITY_TXT_END};
 use alloc::{
+    collections::BTreeMap,
     string::{String, ToString},
     vec::Vec,
 };
@@ -7,9 +8,8 @@ use core::{
     fmt::{self, Display},
     str::from_utf8,
 };
-use alloc::collections::BTreeMap;
-use thiserror::Error;
 use memchr::memmem::find as find_bytes;
+use thiserror::Error;
 
 pub enum Contact {
     Email(String),
